@@ -8,7 +8,7 @@ Lady Queen is clone website of UrbenMonky. it is an  e-commerce company that pro
 
 </p>
 
-<h3 align="center"><a href="https://spiffy-parfait-1c8f71.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://ladyqueencom.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 
  
   
