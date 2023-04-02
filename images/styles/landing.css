@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Avenir Next Regular','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+img{
+    width: 100%;
+}
+body{
+    width: 100vw;
+    margin: 0px;
+    overflow-x: hidden;
+}
+#navdisplayflex{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#navflex{
+    display: flex;
+    align-items: flex-end;
+    margin: 0px 20px;
+}
+#loginid{
+    width: 40px;
+    margin-bottom: -6px;
+    margin-right: -15px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+#cartlogoid{
+    width: 44px;
+}
+#cartlogoidi{
+    display: none;
+    right: 75px;
+    top: 45px;
+}
+#loginidi{
+    position: absolute;
+    right: 25px;
+    top: 45px;
+  
+}
+#button{
+    margin-top: -120px;
+    margin-bottom: 90px;
+}
+@media screen and (min-width:0px) and (max-width:1350px){
+    #button_1{
+        margin-top: -920px!important;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1300px){
+    #button_1{
+        margin-top: -880px!important;
+    }
+    .buttonnn{
+        margin-top: -200px!important;
+    }
+    #button{
+        margin-top: -75px;
+        margin-bottom: 55px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1250px){
+    #button_1{
+        margin-top: -835px!important;
+    }
+    .buttonnn{
+        margin-top: -200px!important;
+    }
+    #button{
+        margin-top: -109px;
+        margin-bottom: 90px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1200px){
+    #button_1{
+        margin-top: -835px!important;
+        margin-bottom: 717px!important;
+    }
+    .buttonnn{
+        margin-top: -200px!important;
+    }
+    #button{
+        margin-top: -114px;
+        margin-bottom: 90px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1150px){
+    #button_1{
+        margin-top: -760px!important;
+        margin-bottom: 651px!important;
+    }
+    .buttonnn{
+        margin-top: -200px!important;
+    }
+    #button{
+        margin-top: -120px;
+        margin-bottom: 90px;
+    }
+    nav .wrapper .section{
+        margin-left: 0px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:1100px){
+    #button_1{
+        margin-top: -731px!important;
+        margin-bottom: 630px!important;
+    }
+    .buttonnn{
+        margin-top: -200px!important;
+    }
+    #button{
+        margin-top: -85px;
+        margin-bottom: 50px;
+    }
+}
+@media screen and (min-width:0px) and (max-width:999px){
+    #navTop{
+        display: none;
+    }
+    #onlyfornavstyle{
+        display: block;
+        width: 90%;
+    }
+    nav .wrapper .section{
+        margin-left: 0px;
+    }
+    #navdisplayflex{
+        margin-bottom: 5px;
+    }
+    #cartlogoid{
+        display: block;
+    }
+    #cartlogoidi{
+        display: flex;
+        position: absolute;
+    }
+    #navflex{
+        margin: 0px;
+    }
+    #loginid{
+        margin-right: 0px;
+    }
+    #nav_buttons>li:nth-child(4){
+        display: none;
+     }
+     nav .wrapper .section{
+        width: max-content;
+     }
+     #button{
+        display: none;
+     }
+     #button_1{
+        display: none!important;
+     }
+     .logo > img{
+        margin-top: 0px;
+     }
+     .logo{
+        position: absolute;
+     }
+     #onlyfornavstyl{
+        display: flex;
+        justify-content: space-around;
+        padding-top: 55px;
+        margin-left: 15px;
+     }
+}
+@media screen and (min-width:0px) and (max-width:1030px){
+    #button_1{
+        margin-top: -677px!important;
+        margin-bottom: 570px!important;
+    }
+}
+@media screen and (min-width:0px) and (max-width:900px){
+    #search{
+        position: absolute;
+        margin-top: -50px;
+        margin-right: -63%;
+    }
+}
+@media screen and (min-width:0px) and (max-width:850px){
+ #navdisplayflex{
+    display: block;
+ }
+ #search{
+    float: right;
+ }
+}
+@media screen and (min-width:0px) and (max-width:620px){
+    #footerone{
+        display: none!important;
+    }
+    #footermaindiv{
+        display: block!important;
+    }
+    .footermain3{
+        display: none;
+    }
+    #search{
+        float: right;
+        margin-right: -50%;
+     }
+     #cartlogoidi{
+        position: absolute;
+        right: 50px;
+     }
+     #loginidi{
+        position: absolute;
+        right: 5px;
+     }
+     nav .wrapper .section li a{
+        padding: 6px 13px;
+     }
+     .popup{
+        width: 300px;
+     }
+     .popup .form .form-element input[type="text"], .popup .form .form-element input[type="password"]{
+        width: 93%;
+     }
+}
+@media screen and (min-width:0px) and (max-width:500px){
+    .logo{
+        display: none;
+    }
+    #onlyfornavstyl{
+        margin-left: 0px;
+        justify-content: flex-start;
+    }
+    .popup{
+        width: 250px;
+     }
+}
+@media screen and (min-width:0px) and (max-width:400px){
+    nav .wrapper .section li a{
+        padding: 0px 10px;
+    }
+    #cartlogoidi{
+        top: 0;
+    }
+    #loginidi{
+        top: 1px;
+    }
+  li{
+    max-width: max-content;
+  }
+  .popup{
+    width: 250px;
+ }
+}
