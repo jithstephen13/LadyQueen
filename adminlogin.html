@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/logo.png">
+    <title>Create A New Account</title>
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/landing.css">
+    <link rel="stylesheet" href="./styles/scrolebar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<style>
+body {
+  background-color: white;
+}
+
+#form {
+  margin: auto;
+  width: 60%;
+  padding: 30px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+#signupheading{
+  margin-top: 100px;
+  text-align: center;
+}
+label {
+  font-size: 1.2em;
+  color: black;
+  margin-bottom: 10px;
+  display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  color: black;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: white;
+  color: black;
+}
+nav {width: 100%;height: 70px;background: rgb(32, 7, 5);background: linear-gradient(90deg, rgba(32, 7, 5, 1) 0%, rgba(255, 0, 0, 1) 49%, rgba(255, 255, 255, 1) 100%);display: flex;justify-content: space-between;align-items: center;font-size: 30px;}
+      nav > a:nth-child(1) { padding: 0px 30px 0px 30px;text-decoration: none;color: white;}
+      nav > div {padding: 0px 30px 0px 30px;text-decoration: none;color: black;}
+      nav>div>img{width: 40px;position: absolute;right: 6px;}
+
+
+
+</style>
+<body>
+    <nav>
+        <a href="./index.html">Trending Eagle</a>
+        <div><a href="./admin.html" id="admincreateaccount">Back to Page</a></div>
+       
+      </nav>
+
+                <!-- Nav Bar End here -->
+ <h1 id="signupheading">Create Admin Account on Trending Eagle</h1>
+    <form id="form">
+      <label>Name:</label>
+        <input type="text" id="name" required>
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <br>
+        <!-- <label>Email:</label>
+        <input type="email" id="email" required>
+        <br> -->
+        <button type="submit">Create Account</button>
+      </form>
+      <footer id="footer">
+        <div id="footerone">
+            <div>Want 25% off your purchase? <span> Refer A friend!</span></div>
+            <div>A gift that always fits. <span> Shop E-Gift Card</span></div>
+        </div>
+        <div id="footermaindiv">
+            <div>
+                <div class="footerimg">
+                    <img src="./images/payment.png" alt="">
+                    <p>PAYMENT OPTIONS Credit,Debit,Paytm Wallet & more.</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/location.png" alt="">
+                    <p>STORE LOCATOR</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/email.jpg" alt="">
+                    <p>EMAIL SIGN UP</p>
+                </div>
+                <div class="footerimg">
+                    <img src="./images/BLOGS.png" alt="">
+                    <p>AEO BLOGS</p>
+                </div>
+            </div>
+            <div id="footerseconddiv">
+                <div class="footerimg">
+                    <img src="./images/track.png" alt="">
+                    <p>TRACK ORDER</p>
+                </div>
+                <div>ABOUT AEO</div>
+                <div>FREQUENTLY ASKED QUESTIONS</div>
+                <div>RETURNS POLICY</div>
+                <div>CANCELLATION POLICY</div>
+                <div>SHIPPING POLICY</div>
+                <div>TERMS AND CONDITIONS OF USE</div>
+                <div>OFFER T&C</div>
+                <div>PRIVACY POLICY</div>
+                <div>SITE MAP</div>
+            </div>
+            <div class="footermain3">
+                <div><img src="./images/question.png" alt=""><span> HAVE A QUESTION ?</span></div>
+                <div><img src="./images/suport.png" alt=""><span>CUSTOMER SUPPORT</span> </div>
+                <div><img src="./images/facebook.png" alt=""><span>FOLLOW US</span> </div>
+            </div>
+        </div>
+    
+</body>
+<script src="./scripts/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.0/dist/sweetalert2.all.min.js"></script>
+<script>
+  // let form = document.getElementById("form");
+  let form = document.getElementById("form");
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let name = document.getElementById("name").value;
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+
+  // request to receive the list of users
+  fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI")
+    .then((res) => res.json())
+    .then((data) => {
+      let existingUsername = data.find(user => user.username === username);
+      let existingname = data.find(user => user.name === name);
+      if (existingUsername) {
+        // User already exists, do not allow sign up
+        // alert("This username is already taken. Please choose another one.");
+        Swal.fire({
+      title: 'This username is already taken.',
+      showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+      }
+      })
+      }
+     else if(existingname) {
+      // alert("This name is already taken. Please choose another one.");
+      Swal.fire({
+      title: 'This name is already taken.',
+      showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+      }
+      })
+     }
+      
+      else {
+        // User does not exist, allow sign up
+        let newUser = {
+          name: name,
+          username: username,
+          password: password,
+          admin: true
+        };
+        fetch("https://63c69db7dcdc478e15c55914.mockapi.io/UsersAPI", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newUser)
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            // console.log(data);
+        Swal.fire({
+      title: `Hi! ${data.name}.You have successfully created an admin account with "TRENDING EAGLE"`,
+      showClass: {
+      popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+      popup: 'animate__animated animate__fadeOutUp'
+      }
+      })
+          });
+      }
+    });
+});
+    
+</script>
+</html>
